@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Cards from './components/Cards';
+import cards from './cardArray';
+import Scoreboard from './components/Scoreboard';
 
 class App extends Component {
   constructor(props) {
@@ -7,15 +10,70 @@ class App extends Component {
     this.state = {
       highScore: 0,
       score: 0,
+      cards: cards,
+      selectedCards: [],
+      turn: this.turn
     }
   }
 
-  render() {
+  componentDidMount() {
+    this.randomizeCards()
+  }
+
+  randomizeCards = () => {
+    const array = this.state.cards
+    const length = array.length
+    const newArray = [];
+    while (newArray.length !== length) {
+      const randomNumber = Math.floor(Math.random() * array.length);
+      //used to use and if statement but have gone with a splice method for faster code
+      newArray.push(array[randomNumber])
+      array.splice(randomNumber, 1)
+    }
+    this.setState({
+      cards: newArray
+    });
+  }
+
+  turn = (card) => {
+    let selectedCards = this.state.selectedCards
+    if (selectedCards.includes(card)) {
+      this.setState({
+        score: 0,
+        selectedCards: [],
+      })
+    } else {
+      const score = this.state.score + 1
+      let highScore = this.state.highScore
+      if (highScore < score) {
+        highScore = score
+      }
+      selectedCards.push(card)
+      if (selectedCards.length === this.state.cards.length) {
+        selectedCards = []
+      }
+      this.setState({
+        highScore: highScore,
+        score: score,
+        selectedCards: selectedCards
+      });
+    }
+    
+    this.randomizeCards()
+  }
+
+  render(){
     return (
       <div>
         <div>
           <h1>The Official JoJo's Bizzare Adventure Unofficial Memory Game</h1>
           <p>Rules: Score points by selecting a card, you lose if you select the same card twice. Cards are randomized each turn.</p>
+        </div>
+        <div>
+          <Scoreboard highScore={this.state.highScore} score={this.state.score}/>
+        </div>
+        <div>
+          <Cards cards={this.state.cards} turn={this.state.turn}/>
         </div>
       </div>
     );
@@ -23,12 +81,3 @@ class App extends Component {
 }
 
 export default App;
-
-//--plan--
-//make array of cards - name and images
-//import this array into app
-//create function to randomise array
-//create 2nd empty array
-//when card is selected - check if card is in 2nd array, if no add to array, if yes reset game
-//if score > highscore update highscore
-//2nd array is emptied and game continues if 2nd array.length === 1st array.length
