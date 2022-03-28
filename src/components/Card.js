@@ -1,10 +1,11 @@
 import React from 'react';
 
 function Card(props) {
-    const { name } = props
+    const { card } = props
     return (
-        <div className="card">
-            <p>{name}</p>
+         <div className="card" style={{backgroundColor: card.colour}}>
+             <img src={card.src} alt={card.name}></img>
+            <p>{card.name}</p>
         </div>
     );
 }

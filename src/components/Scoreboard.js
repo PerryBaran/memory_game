@@ -3,7 +3,7 @@ import React from 'react';
 function Scoreboard(props) {
     const { highScore, score } = props
     return (
-        <div>
+        <div className="scoreboard">
             <div>
                 <h2>High Score</h2>
                 <p>{highScore}</p>

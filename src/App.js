@@ -65,9 +65,10 @@ class App extends Component {
   render(){
     return (
       <div>
-        <div>
-          <h1>The Official JoJo's Bizzare Adventure Unofficial Memory Game</h1>
-          <p>Rules: Score points by selecting a card, you lose if you select the same card twice. Cards are randomized each turn.</p>
+        <div className="rules">
+          <h1>The Officially Unofficial JoJo's Bizzare Adventure Memory Game</h1>
+          <p>Rules: Score points by selecting a card, you lose if you select the same card twice. Cards are randomized each turn. After all cards have been selected game restarts but scoring continues.</p>
+          <p>Created by <a href="https://github.com/PerryBaran">Perry Baran</a></p>
         </div>
         <div>
           <Scoreboard highScore={this.state.highScore} score={this.state.score}/>
