@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/memory_game/static/css/main.b84113c2.css",
+    "main.js": "/memory_game/static/js/main.828c2cd6.js",
+    "static/media/johnny.png": "/memory_game/static/media/johnny.2d1e1b4c81f57a847761.png",
+    "static/media/jonathan.png": "/memory_game/static/media/jonathan.dbdb4c44fcc37ddee83b.png",
+    "static/media/joseph.png": "/memory_game/static/media/joseph.921c4c134fb8f03673b1.png",
+    "static/media/jotaro.png": "/memory_game/static/media/jotaro.fe7311624b6d9efd0a50.png",
+    "static/media/jolyne.png": "/memory_game/static/media/jolyne.7e057e06f417e939b236.png",
+    "static/media/josuke.png": "/memory_game/static/media/josuke.ab796d9b0758f4d16358.png",
+    "static/media/giorno.png": "/memory_game/static/media/giorno.d43e127fbf43c3f9acf0.png",
+    "static/media/josuke2.png": "/memory_game/static/media/josuke2.40eb893bc94ff1dcfe96.png",
+    "index.html": "/memory_game/index.html",
+    "main.b84113c2.css.map": "/memory_game/static/css/main.b84113c2.css.map",
+    "main.828c2cd6.js.map": "/memory_game/static/js/main.828c2cd6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b84113c2.css",
+    "static/js/main.828c2cd6.js"
+  ]
+}
